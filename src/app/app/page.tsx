@@ -28,11 +28,6 @@ export default function AppPage() {
     document.documentElement.classList.add('dark');
   }, []);
   
-  // Function to switch from dark to light theme
-  const switchToLightTheme = () => {
-    document.documentElement.classList.remove('dark');
-  };
-
   const handleSendMessage = async (message: string): Promise<string> => {
     try {
       setError(null);

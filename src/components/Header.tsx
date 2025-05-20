@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export function Header() {
   const router = useRouter();
@@ -13,16 +13,6 @@ export function Header() {
     router.push('/');
   };
 
-  const toggleTheme = () => {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-      document.documentElement.classList.add('dark');
-    }
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 h-16 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-colors duration-[var(--transition-duration)]">
       <div className="container flex h-full items-center justify-between px-8">
@@ -30,10 +20,12 @@ export function Header() {
           onClick={handleHomeClick}
           className="flex items-center gap-2 text-xl font-semibold hover:opacity-80 transition-opacity"
         >
-          <img 
+          <Image 
             src="/logo.png" 
             alt="Optimistify Logo" 
             className="h-14 w-14 object-contain"
+            width={56}
+            height={56}
           />
           <span>
             <style jsx>{`
